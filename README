@@ -1,7 +1,8 @@
-Packages to import
-    - os
+Packages to import and/or import
+    - os (to access system hardware devices such as the screen, and audio drivers)
     - openpyxl (to open excel worksheets)
     - webbrowser (to open links from worksheets)
+    - ffmpeg (to initiate screen recording, and convert file into usable/viewable format)
     "os" is imported to check if operating system is iOS. If it's iOS, run AppleScript via Python
 
 Audio package to install
