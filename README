@@ -1,0 +1,16 @@
+Packages to import
+    - os
+    - openpyxl (to open excel worksheets)
+    - webbrowser (to open links from worksheets)
+    "os" is imported to check if operating system is iOS. If it's iOS, run AppleScript via Python
+
+Audio package to install
+    - BlackHole virtual audio driver (https://github.com/ExistentialAudio/BlackHole)
+    Without a virtual audio driver, you can only record audio through built-in microphone instead of the internal sound system
+    Therefore this is mandatory to install
+
+Prior to recording
+    - Go to "Sound" in System Settings, and change both Output and Input devices to Blackhole 2ch
+    - Your speakers won't produce any sound, this is ok
+    - Run the Python script, and turn volume all the way up
+    - Once recording is finished, turn down the volume first, then go back to "Sound" in System Settings to switch rever both Output and Input devices

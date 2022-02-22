@@ -1,15 +1,18 @@
-import os
 from openpyxl import Workbook, load_workbook
+import os
 import webbrowser
 
-wb = load_workbook('gymshark_influencers.xlsx')
+# from webdriver_manager.chrome import ChromeDriverManager
+# from selenium import webdriver
+
+wb = load_workbook('./excel/gymshark_influencers.xlsx')
 ws = wb.active
 
 urls = ws['H']
 tiktok = ws['F']
 
 def record(handle):
-    os.system(f"""ffmpeg -f avfoundation -i "1:0" -t 00:00:5 -y -r 10 recordings/{handle}.mov""")
+    os.system(f"""ffmpeg -f avfoundation -i "1:0" -t 00:00:23 -y -r 10 recordings/{handle}.mov""")
 
 for i, cell in enumerate(urls):
     url = cell.value
@@ -18,36 +21,15 @@ for i, cell in enumerate(urls):
     record(handle)
 
 
-# command = """ osascript -e '
+# ----------  Selenium Attempt  ----------
 
-# --  # Setup to do a screen recording.
+# driver = webdriver.Chrome(ChromeDriverManager().install())
+# url = 'https://www.tiktok.com/@flexforall/video/7062901737237220654?is_copy_url=1&is_from_webapp=v1&lang=en'
 
-# tell application "QuickTime Player" to new screen recording
+# driver = webdriver.Chrome()
+# driver.get(url)
 
-# --  # Start the screen recording.
+# video = driver.find_element_by_xpath("//li[@data-e2e='video-author-uniqueid']")
+# print(video)
 
-# tell application "System Events" to tell process "Screen Shot"
-#     repeat until exists button "Record" of its front window
-#         delay 0.1
-#     end repeat
-#     click button "Record" of its front window
-# end tell
-
-# --  # Set the time in seconds you want the recording to be.
-
-# delay 10
-
-# --  # Stop the recording.
-
-# tell application "System Events" to ¬
-#     click menu bar item 1 ¬
-#         of menu bar 1 ¬
-#         of application process "screencaptureui"
-
-# '"""
-
-# for i, cell in enumerate(urls):
-#     url = cell.value
-#     handle = tiktok[i].value
-#     webbrowser.open(url, new=0)
-#     os.system(command)
+# ----------  Selenium Attempt  ----------
