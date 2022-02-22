@@ -1,3 +1,5 @@
-./recordings
-./appleScript.py
-./excel
+.vscode/
+
+/recordings
+/appleScript.py
+/excel
