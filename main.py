@@ -8,8 +8,8 @@ def start_application():
     for i, cell in enumerate(urls):
         url = cell.value
         if 'tiktok' in url:
-            tiktok_scraper(url, 10)
+            tiktok_scraper(url, 20)
         if 'instagram' in url:
-            instagram_scraper(url, 10)
+            instagram_scraper(url, 20)
 
 start_application()
