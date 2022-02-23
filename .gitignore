@@ -1,7 +1,6 @@
 .vscode/
 
-recordings
-/appleScript.py
-excel
-/chromedriver
+/backend/recordings
+/backend/excel
+
 __pycache__
