@@ -5,6 +5,9 @@ Packages to import and/or import
     - ffmpeg (to initiate screen recording, and convert file into usable/viewable format)
     "os" is imported to check if operating system is iOS. If it's iOS, run AppleScript via Python
 
+    - selenium (for webscraping via Chrome)
+    - Chrome driver (to allow selenium to automate web scraping via Chrome) https://chromedriver.storage.googleapis.com/index.html
+
 Audio package to install
     - BlackHole virtual audio driver (https://github.com/ExistentialAudio/BlackHole)
     Without a virtual audio driver, you can only record audio through built-in microphone instead of the internal sound system

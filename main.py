@@ -1,35 +1,15 @@
-from openpyxl import Workbook, load_workbook
-import os
-import webbrowser
+from worksheet.worksheet import open_workbook
+from scrapers.tiktok_scraper import tiktok_scraper
+from scrapers.instagram_scraper import instagram_scraper
 
-# from webdriver_manager.chrome import ChromeDriverManager
-# from selenium import webdriver
+def start_application():
+    urls = open_workbook('./excel/gymshark_influencers.xlsx', 'H')
 
-wb = load_workbook('./excel/gymshark_influencers.xlsx')
-ws = wb.active
+    for i, cell in enumerate(urls):
+        url = cell.value
+        if 'tiktok' in url:
+            tiktok_scraper(url, 10)
+        if 'instagram' in url:
+            instagram_scraper(url, 10)
 
-urls = ws['H']
-tiktok = ws['F']
-
-def record(handle):
-    os.system(f"""ffmpeg -f avfoundation -i "1:0" -t 00:00:23 -y -r 10 recordings/{handle}.mov""")
-
-for i, cell in enumerate(urls):
-    url = cell.value
-    handle = tiktok[i].value
-    webbrowser.open(url)
-    record(handle)
-
-
-# ----------  Selenium Attempt  ----------
-
-# driver = webdriver.Chrome(ChromeDriverManager().install())
-# url = 'https://www.tiktok.com/@flexforall/video/7062901737237220654?is_copy_url=1&is_from_webapp=v1&lang=en'
-
-# driver = webdriver.Chrome()
-# driver.get(url)
-
-# video = driver.find_element_by_xpath("//li[@data-e2e='video-author-uniqueid']")
-# print(video)
-
-# ----------  Selenium Attempt  ----------
+start_application()

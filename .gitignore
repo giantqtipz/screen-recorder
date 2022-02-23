@@ -3,3 +3,5 @@
 /recordings
 /appleScript.py
 /excel
+/chromedriver
+__pycache__
