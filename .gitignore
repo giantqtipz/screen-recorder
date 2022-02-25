@@ -1,6 +1,5 @@
 .vscode/
 
-/backend/recordings
-/backend/excel
+recordings
 
 __pycache__

@@ -8,7 +8,7 @@ openpyxl = "*"
 selenium = "*"
 webdriver-manager = "*"
 ffmpeg = "*"
-flask = "*"
+tk = "*"
 
 [dev-packages]
 
